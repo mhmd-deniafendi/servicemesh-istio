@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learn-istio
+  labels:
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: istio-labs
+    replicas: 1
+    template:
+      metadata:
+      labels:
+        app: istio-labs
+        version: 1
+      spec:
+        containers:
+        - name: learn-istio
+          image: 14022021/web-application:latest
+          ports:
+          - containerPort: 8080

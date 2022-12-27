@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: learn-istio
+  labels:
+    version: v1
+spec:
+  type: ClusterIP
+  ports:
+  - name: learn-istio
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: istio-labs
+    version: v1
